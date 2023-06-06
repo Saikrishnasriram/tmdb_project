@@ -29,3 +29,37 @@ fetch(API_URL)
     document.getElementById("container").innerHTML = data1;
   })
   .catch(error => console.log('ERROR'));
+
+
+// Function to handle the search
+  function handleSearch() {
+    const searchQuery = document.getElementById("search-input").value;
+    const searchApiUrl = `${searchURL}&query=${searchQuery}`;
+  
+    fetch(searchApiUrl)
+      .then(res => res.json())
+      .then(data => {
+        const searchResults = data.results;
+        let searchData = "";
+        searchResults.forEach(result => {
+          searchData += `
+            <div class="base">
+              <img src="${IMG_URL}${result.poster_path}" alt="" class="poster"/>
+              <div class="content">
+                <div class="tag">
+                Rating: ${result.vote_average}
+                </div>
+                <p class="movie">
+                  ${result.title}
+                </p>
+              </div>
+            </div>
+          `;
+        });
+        document.getElementById("container").innerHTML = searchData;
+      })
+      .catch(error => console.log('ERROR'));
+  }
+  
+  // Event listener for search button
+  document.getElementById("search-button").addEventListener("click", handleSearch);
