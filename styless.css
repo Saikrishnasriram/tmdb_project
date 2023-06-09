@@ -39,18 +39,23 @@ p{
 .right{
     margin-right: 20px;
     display: flex;
+    gap: 5px;
     align-items: center;
     justify-content: space-between;
     flex-shrink: 0;
-
 }
 .search-button{
     margin-right: 11px;
     border: none;
+    padding-top: 3px;
     background-color: white;
+    transition: opacity 0.15s;
 }
 .search-button:hover{
     cursor: pointer;
+}
+.search-button:active{
+    opacity: 0.15;
 }
 .search-bar{
     border: none;
@@ -59,7 +64,9 @@ p{
     border-left-color: #D4DADF;
     border-left-width: 1px;
     border-left-style: solid;
+    outline: none;
 }
+
 .search-bar::placeholder{
     font-family: Open Sans;
 font-style: normal;
@@ -113,15 +120,20 @@ cursor: pointer;
     color: white;
     box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.12);
 border-radius: 8px;
+border: none;
 padding: 12px 24px;
 position: absolute;
 width: 152px;
 height: 43px;
 left: 58.21px;
 top: 400px;
+transition: opacity 0.15s;
 }
 .add_button:hover{
     cursor: pointer;
+}
+.add_button:active{
+    opacity: 0.3;
 }
 
 .head{
@@ -167,6 +179,9 @@ margin-bottom: 20px;
     width: 100%;
     height: 285px;
 }
+.poster:hover{
+    cursor: pointer;
+}
 .content{
     display: flex;
 flex-direction: column;
@@ -180,8 +195,6 @@ bottom: 0px;
 }
 
 .tag{
-    display: flex;
-flex-direction: row;
 align-items: flex-start;
 padding: 4px 8px;
 gap: 10px;
@@ -201,6 +214,9 @@ font-style: normal;
 font-weight: 500;
 font-size: 24px;
 line-height: 32px;
-color: #FFFFFF;
+color: #ffffff;
+}
+.movie:hover{
+    cursor: pointer;
 }
 

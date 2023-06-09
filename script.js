@@ -41,6 +41,9 @@ fetch(API_URL)
       .then(data => {
         const searchResults = data.results;
         let searchData = "";
+        if (searchResults.length === 0) {
+          searchData = "<p>No results found</p>";
+        } else {
         searchResults.forEach(result => {
           searchData += `
             <div class="base">
@@ -56,6 +59,7 @@ fetch(API_URL)
             </div>
           `;
         });
+      }
         document.getElementById("container").innerHTML = searchData;
       })
       .catch(error => console.log('ERROR'));
